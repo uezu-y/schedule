@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
- 
+  
   def create
     @user = User.new(params.require(:user).permit(:title, :startdate, :enddate, :end, :sche_memo))
      if @user.save
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
        render "new"
      end
   end
- 
+  
   def show
      @user = User.find(params[:id])
   end
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
      if @user.update(params.require(:user).permit(:title, :startdate, :enddate, :end, :sche_memo))
-       flash[:notice] = "ユーザーIDが「#{@user.id}」の情報を更新しました"
+       flash[:notice] = "ID「#{@user.id}」のスケジュールを更新しました"
        redirect_to :users
      else
        render "edit"

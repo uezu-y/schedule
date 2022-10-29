@@ -1,5 +1,5 @@
 <div class="main_container">
-<h3>ユーザー情報一覧</h3>
+<h3>スケジュール一覧</h3>
 <% if flash[:notice] %>
    <p class="notice"><%= flash[:notice] %></p>
 <% end %>
@@ -29,8 +29,6 @@
         <td>
           <% if user.end == checked_value='1' %>
                ○
-          <% else user.end == checked_value='0' %>
-          
           <% end %>
         </td>
         <td><%= user.updated_at.to_s(:datetime_jp) %></td>
